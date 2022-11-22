@@ -10,7 +10,7 @@ async function run() {
         database.dropDatabase();
         database = client.db("apexlegends");
         const legends = database.collection("legends");
-        const result = await legends.insertOne({name:"Рэйф"});
+        const result = await legends.insertMany(data);
         console.log(`${result} documents were inserted`);
     }
     finally {
