@@ -14,11 +14,11 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="/">Главная</a>
                 </li>
-                <% menu.forEach(function(legend) { %>
+                <% if(typeof nav == 'object' && nav) { nav.forEach(function(legend) { %>
                     <li class="nav-item">
                         <a class="nav-link active"" href="/legends/<%= legend.nick %>"><%= legend.title %></a>
                     </li>
-                <% }) %>
+                <% })} %>
             </ul>
         </div>
         </nav>
