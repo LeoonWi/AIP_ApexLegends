@@ -9,7 +9,8 @@ router.get('/', function(req, res, next) {
         res.render('index', {
             title: "Apex Legends",
             picture: "images/apex-legends-team.png",
-            menu: menu
+            menu: menu,
+            counter: req.session.counter
         });
     })
 });
