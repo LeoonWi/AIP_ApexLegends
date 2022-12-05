@@ -5,7 +5,7 @@ var Legend = require("../models/legend").Legend
 /* Домашняя страница */
 router.get('/', function(req, res, next) {
     Legend.find({}, {_id: 0, title: 1, nick: 1}, function(err, menu) {
-        res.render('index', {
+        res.cookie('greeting', 'Hi!!!').render('index', {
             title: "Apex Legends",
             picture: "images/apex-legends-team.png",
             menu: menu
