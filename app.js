@@ -6,6 +6,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/apexlegends')
 var session = require('express-session')
+var MongoStore = require('connect-mongo');(session);
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -28,7 +29,8 @@ app.use(session (
         secret: "ApexLegends",
         cookie: {maxAge: 60 * 1000},
         resave: true,
-        saveUninitialized: true
+        saveUninitialized: true,
+        store: MongoStore.create({mongoUrl: 'mongodb://127.0.0.1:27017/apexlegends'})
     }
 ))
 
