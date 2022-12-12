@@ -14,4 +14,9 @@ router.get('/', function(req, res, next) {
     })
 });
 
+/* logreg */
+router.get('/logreg', function(req, res, next) {
+    res.render('logreg', {title: 'Вход'});
+});
+
 module.exports = router;
