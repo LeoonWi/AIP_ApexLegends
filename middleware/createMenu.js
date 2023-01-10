@@ -1,11 +1,12 @@
-var Legend = require("../models/legend").Legend
+//var Legend = require("../models/legend").Legend
+var db = require('../mySQLConnect.js');
 
 module.exports = function(req, res, next) {
     res.locals.nav = []
 
-    Legend.find(null, {_id: 0, title: 1, nick: 1}, function(err, result) {
+    db.query(`SELECT * FROM legends`, (err, legends) => {
         if(err) throw err
-        res.locals.nav = result
+        res.locals.nav = legends
         next()
     })
 }
