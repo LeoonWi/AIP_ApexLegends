@@ -14,9 +14,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="/">Главная</a>
                 </li>
-                <% if(typeof nav == 'object' && nav) { nav.forEach(function(legend) { %>
+                <% if(typeof nav == 'object' && nav) { nav.forEach(function(legends) { %>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/legends/<%= legend.nick %>"><%= legend.title %></a>
+                        <a class="nav-link active" href="/legends/<%= legends.nick %>"><%= legends.title %></a>
                     </li>
                 <% })} %>
                 <% if(user) { %>
