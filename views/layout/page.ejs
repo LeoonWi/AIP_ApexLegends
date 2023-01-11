@@ -19,7 +19,7 @@
                         <a class="nav-link active" href="/legends/<%= legend.nick %>"><%= legend.title %></a>
                     </li>
                 <% })} %>
-                <% if(user) { %>
+                <% if(user.length > 0) { %>
                     <form action=" /logout" method="post">
                         <button type="submit" class="btn btn-link">Выйти</button>
                     </li>

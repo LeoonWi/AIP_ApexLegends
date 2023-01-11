@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db = require('../mySQLConnect.js');
 //var Legend = require('../models/legend').Legend;
-//var checkAuth = require('../middleware/checkAuth.js')
+var checkAuth = require('../middleware/checkAuth.js')
 //var async = require("async");
 
 /*GET legends listing*/
@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 })
 
 /* Страница легенд */
-router.get('/:nick', function(req, res, next) {
+router.get('/:nick', checkAuth, function(req, res, next) {
     db.query(`SELECT * FROM legends WHERE legends.nick = '${req.params.nick}'`, (err, legends) => {
         if(err) {
             console.log(err);
